@@ -1,19 +1,23 @@
 class Solution {
 public:
     int maxDifference(string s) {
-        int ans;
-        unordered_map<char,int>freq;
+        unordered_map<char,int>mpp;
         for(int i=0;i<s.size();i++){
-            freq[s[i]]++;
+            mpp[s[i]]++;
         }
 
         int odd=0;
-        int even= INT_MAX;
-        for(auto f: freq){
-            if (f.second==0) continue;
-            if (f.second&1) odd=max(f.second, odd);
-            if ((f.second&1)==0) even=min(f.second, even);
+        int even=100;
+        for(auto it :mpp){
+            if(it.second==0) continue;
+            if(it.second%2==1){
+                odd=max(it.second,odd);
+            }
+              if(it.second%2==0){
+                even=min(it.second,even);
+            }
         }
         return odd-even;
+        
     }
 };
