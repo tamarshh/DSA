@@ -12,20 +12,30 @@
 class Solution {
 public:
     vector<int> inorderTraversal(TreeNode* root) {
-        vector<int>res;
-        inorder(root,res);
-        return res;
-    }
+        vector<int>inorder;
+        stack<TreeNode*>st;
+        TreeNode* temp=root;    
+        //  if(root==nullptr) return inorder;
+
+        //  st.push(root);
+
+         while(true){
+            if(temp!=nullptr){
+                st.push(temp);
+                temp=temp->left;
+            }
+            else{
+                if(st.empty()==true)break;
+                temp=st.top();
+                st.pop();
+                  inorder.push_back(temp->val);
+                    temp=temp->right;
+            }
+            
+
     
-
-private:
-     void inorder(TreeNode*node,vector<int>&res){
-        if(node==nullptr) return;
-
-        inorder(node->left,res);
-        res.push_back(node->val);
-        inorder(node->right,res);
-     }
-
+         }
+         return inorder;
         
+    }
 };
