@@ -21,14 +21,14 @@ public:
         int cnt1=counter(headA);
         int cnt2=counter(headB);
         if(cnt1>cnt2){
-            int hop1=cnt1-cnt2;
-            while(hop1--){
+            int diff=cnt1-cnt2;
+            while(diff--){
                 headA=headA->next;
             }
         }
         else{
-            int hop2=cnt2-cnt1;
-            while(hop2--){
+            int diff=cnt2-cnt1;
+            while(diff--){
                 headB=headB->next;
             }
         }
