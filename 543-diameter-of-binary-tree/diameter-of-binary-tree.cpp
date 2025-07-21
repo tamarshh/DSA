@@ -18,7 +18,7 @@ int calcHeight(TreeNode* root){
     int lh,rh;
         lh=calcHeight(root->left);
         rh=calcHeight(root->right);
-    maxDia=max(maxDia,lh+rh);
+    maxDia=max(maxDia,1+lh+rh);
     return (1+max(lh,rh));
 
     // return (1+max(calcHeight(root->left), calcHeight(root->right)));
@@ -27,7 +27,7 @@ int calcHeight(TreeNode* root){
 
         calcHeight(root);
         
-        return maxDia;
+        return maxDia-1;
 
         
     }
