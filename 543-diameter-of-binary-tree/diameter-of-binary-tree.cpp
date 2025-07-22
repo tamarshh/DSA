@@ -21,7 +21,7 @@ int calcHeight(TreeNode* root){
     maxDia=max(maxDia,1+lh+rh);
     return (1+max(lh,rh));
 
-    // return (1+max(calcHeight(root->left), calcHeight(root->right)));
+    
 }
     int diameterOfBinaryTree(TreeNode* root) {
 
