@@ -14,15 +14,15 @@ public:
 
 //Approach 2 using Recursion
 
- void Lview(TreeNode *root,int level,vector<int>&ans){
+ void Rview(TreeNode *root,int level,vector<int>&ans){
              if(!root) return ;
              
              if(level==ans.size()){
                  ans.push_back(root->val);
              }
            
-             Lview(root->right,level+1,ans);
-               Lview(root->left,level+1,ans);
+             Rview(root->right,level+1,ans);
+               Rview(root->left,level+1,ans);
                 
             }
         
@@ -55,8 +55,8 @@ public:
             
     //     }
     //    return ans;
-     vector<int>ans;
-            Lview(root,0,ans);
+        vector<int>ans;
+            Rview(root,0,ans);
             return ans;
            
 
